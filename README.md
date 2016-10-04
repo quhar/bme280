@@ -1,7 +1,16 @@
 # bme280
 [![GoDoc](https://godoc.org/github.com/quhar/bme280?status.svg)](https://godoc.org/github.com/quhar/bme280)
 
-Golang library to read data from Bosch BME280 sensor.
+Golang library to read data from Bosch BME280 sensor. It requires library to talk to the device via following interface:
+
+```go
+type bus interface {
+	ReadReg(byte, []byte) error
+	WriteReg(byte, []byte) error
+}
+```
+
+One of the libraries which matches this interface is experimental stanard I/O [lib](https://godoc.org/golang.org/x/exp/io/i2c).
 
 ## Example usage
 
