@@ -86,7 +86,7 @@ const (
 const (
 	SleepMode  byte = 0x00
 	ForcedMode byte = 0x01
-	NormalMode byte = 0x11
+	NormalMode byte = 0x03
 )
 
 // Filter settins
