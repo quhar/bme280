@@ -10,7 +10,7 @@ type bus interface {
 }
 ```
 
-One of the libraries which matches this interface is experimental stanard I/O [lib](https://godoc.org/golang.org/x/exp/io/i2c).
+One of the libraries which matches this interface is experimental standard I/O [lib](https://godoc.org/golang.org/x/exp/io/i2c).
 
 ## Example usage
 
