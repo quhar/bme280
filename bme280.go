@@ -424,10 +424,10 @@ func (b *BME280) compensateHum(raw, tFine int32) float64 {
 		(((((((v1*int32(hComp.H6))>>10)*(((v1*int32(hComp.H3))>>11)+int32(32768)))>>10)+int32(2097152))*int32(hComp.H2) + 8192) >> 14)
 	v1 -= ((((v1 >> 15) * (v1 >> 15)) >> 7) * int32(hComp.H1)) >> 4
 	if v1 < 0 {
-		return 0
+		v1 = 0
 	}
 	if v1 > 419430400 {
-		return 419430400
+		v1 = 419430400
 	}
 	return float64(v1>>12) / 1024.0
 }
