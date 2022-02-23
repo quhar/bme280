@@ -334,7 +334,7 @@ func (b *BME280) loadCompensation() error {
 	b.compensation.hum.H2 = int16(h2Data[1])<<8 | int16(h2Data[0])
 	b.compensation.hum.H3 = uint8(h2Data[2])
 	b.compensation.hum.H4 = int16(h2Data[3])<<4 | int16(h2Data[4]&0x0F)
-	b.compensation.hum.H5 = int16(h2Data[4]&0xF0)<<4 | int16(h2Data[5])
+	b.compensation.hum.H5 = int16(h2Data[5])<<4 | int16(h2Data[4]>>4&0x0F)
 	return nil
 }
 
